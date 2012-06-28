@@ -1,0 +1,1 @@
+var ColorQuest = window.ColorQuest || {};
