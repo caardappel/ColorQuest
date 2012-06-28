@@ -1,0 +1,2 @@
+Moai SDK\nVersion 1.2\nBuild 56
+Jun 24, 2012

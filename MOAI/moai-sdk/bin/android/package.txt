@@ -1,0 +1,12 @@
+arm
+armeabi armeabi-v7a
+android-10
+false
+true
+-DDISABLE_ADCOLONY
+
+-DDISABLE_CHARTBOOST
+
+
+
+
