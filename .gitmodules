@@ -1,0 +1,3 @@
+[submodule "www/externals/CAAT"]
+	path = www/externals/CAAT
+	url = https://github.com/caardappel/CAAT.git
