@@ -1,21 +1,32 @@
 (function()
 {
-    ColorQuest.TestScene = function()
+    ColorQuest.TestScene = function(director)
     {
-        CAAT.TestScene.superclass.constructor.call(this);
+        ColorQuest.TestScene.superclass.constructor.call(this);
+        this.director = director;
         this.hackSetup();
         return this;
     };
 
     ColorQuest.TestScene.prototype =
     {
-        player : null,
+        director: null,
 
+        player : null,
         enemy : null,
+
+        hashMap : null,
+        collTimer : null,
 
         hackSetup : function()
         {
-// too tired. stopping here
+            this.player = new ColorQuest.Player(this.director,this);
+            this.addChild(this.player);
+
+            this.enemy = new ColorQuest.Enemy(this.director,this);
+            this.addChild(this.enemy);
+
+            this.enemy.centerAt(200,200);
         }
     };
 

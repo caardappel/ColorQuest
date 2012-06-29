@@ -21,6 +21,12 @@
             initialize(width, height, this.canvas);
         this.director.setSoundEffectsEnabled(!this.onDevice);
 
+        var test = new ColorQuest.TestScene(this.director);
+        this.director.addScene(test);
+
+        this.director.setScene(0);
+        CAAT.loop(30);
+
         return this;
     };
 
@@ -32,10 +38,25 @@
         initalized : false,
         onDevice : false,
 
+        canvas : null,
         director : null
     };
 
 })();
+
+// Global helpers
+/*ColorQuest.getObjectClass = function(obj) {
+    if (obj && obj.constructor && obj.constructor.toString) {
+        var arr = obj.constructor.toString().match(
+            /function\s*(\w+)/);
+
+        if (arr && arr.length == 2) {
+            return arr[1];
+        }
+    }
+
+    return undefined;
+};*/
 
 // prevent dragging of content
 document.addEventListener("touchmove", function(e){ e.preventDefault(); }, false);
@@ -71,11 +92,4 @@ function onBodyLoad()
             }, 125);
 
     }
-
-    /*if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/))
-     {
-     document.addEventListener("deviceready", function(){ game.init(); }, false);
-     } else {
-     game.init();
-     }*/
 }
